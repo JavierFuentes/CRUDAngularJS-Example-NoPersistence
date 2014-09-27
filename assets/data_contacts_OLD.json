@@ -1,0 +1,22 @@
+[
+    {"id":  1, "firstName": "Nombre1",  "lastName": "Apellido1",  "birthday": "19710724", "sex": 1,    "city": "ciudad1",  "blocked": false, "balanceAmount":  10025},
+    {"id":  2, "firstName": "Nombre2",  "lastName": "Apellido2",  "birthday": "19720611", "sex": 2,    "city": "ciudad2",  "blocked": true,  "balanceAmount": -20000},
+    {"id":  3, "firstName": "Nombre3",  "lastName": "Apellido3",  "birthday": "19730611", "sex": 1,    "city": "ciudad3",  "blocked": true,  "balanceAmount":  30000},
+    {"id":  4, "firstName": "Vacio",    "lastName": null,         "birthday": null,       "sex": null, "city": null,       "blocked": null,  "balanceAmount":   null},
+    {"id":  5, "firstName": "Nombre5",  "lastName": null,         "birthday": "19750611", "sex": 1,    "city": "ciudad5",  "blocked": false, "balanceAmount": -50000},
+    {"id":  6, "firstName": "Nombre6",  "lastName": "Apellido6",  "birthday": "19760611", "sex": 2,    "city": "ciudad6",  "blocked": false, "balanceAmount":  60000},
+    {"id":  7, "firstName": "Nombre7",  "lastName": "Apellido7",  "birthday": "19770611", "sex": 1,    "city": "ciudad7",  "blocked": false, "balanceAmount":  70000},
+    {"id":  8, "firstName": "Nombre8",  "lastName": "Apellido8",  "birthday": "19780611", "sex": 2,    "city": "ciudad8",  "blocked": false, "balanceAmount":  80000},
+    {"id":  9, "firstName": "Nombre9",  "lastName": "Apellido9",  "birthday": "19790611", "sex": 1,    "city": "ciudad9",  "blocked": false, "balanceAmount":  90000},
+    {"id": 10, "firstName": "Nombre10", "lastName": "Apellido10", "birthday": "19800611", "sex": 2,    "city": "ciudad10", "blocked": false, "balanceAmount": 100000},
+    {"id": 11, "firstName": "Nombre11", "lastName": "Apellido11", "birthday": "19810611", "sex": 1,    "city": "ciudad1",  "blocked": false, "balanceAmount": 100010},
+    {"id": 12, "firstName": "Nombre12", "lastName": "Apellido12", "birthday": "19820611", "sex": 2,    "city": "ciudad2",  "blocked": false, "balanceAmount": 100020},
+    {"id": 13, "firstName": "Nombre13", "lastName": "Apellido13", "birthday": "19830611", "sex": 1,    "city": "ciudad3",  "blocked": false, "balanceAmount": 100030},
+    {"id": 14, "firstName": "Nombre14", "lastName": "Apellido14", "birthday": "19840611", "sex": 2,    "city": "ciudad4",  "blocked": false, "balanceAmount": 100040},
+    {"id": 15, "firstName": "Nombre15", "lastName": "Apellido15", "birthday": "19850611", "sex": 1,    "city": "ciudad5",  "blocked": false, "balanceAmount": 100050},
+    {"id": 16, "firstName": "Nombre16", "lastName": "Apellido16", "birthday": "19860611", "sex": 2,    "city": "ciudad6",  "blocked": false, "balanceAmount": 100060},
+    {"id": 17, "firstName": "Nombre17", "lastName": "Apellido17", "birthday": "19870611", "sex": 1,    "city": "ciudad7",  "blocked": false, "balanceAmount": 100070},
+    {"id": 18, "firstName": "Nombre18", "lastName": "Apellido18", "birthday": "19880611", "sex": 2,    "city": "ciudad8",  "blocked": false, "balanceAmount": 100080},
+    {"id": 19, "firstName": "Nombre19", "lastName": "Apellido19", "birthday": "19890611", "sex": 1,    "city": "ciudad9",  "blocked": false, "balanceAmount": 100090},
+    {"id": 20, "firstName": "Nombre20", "lastName": "Apellido20", "birthday": "19900611", "sex": 2,    "city": "ciudad10", "blocked": false, "balanceAmount": 100101}
+]       

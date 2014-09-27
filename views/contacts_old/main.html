@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es" xml:lang="es" ng-app="contactsApp">
+<head>
+
+    <title>CRUD Angular</title>
+    <meta name="author" content="Javier Fuentes">
+    <link rel="icon" href="../../assets/images/Person-Identity-icon.png">
+    <link rel="stylesheet" href="../../js-lib/bootstrap-3.1.1-dist/css/bootstrap.css">
+
+</head>
+<body>
+
+<div class="container">
+    <header class="row text-center text-primary h3">CRUD Angular</header>
+
+    <div class="row">
+        <div class="col-xs-3" ng-include="'./menu.html'"></div>
+        <div class="col-xs-9">
+            <div ng-view></div>
+        </div>
+    </div>
+
+    <footer class="text-left">
+        <script src="../../myUtilities.js"></script>
+        <script>
+            document.write( '<br/>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;' + companyData.getCopyright() )
+        </script>
+    </footer>
+</div>
+
+<!-- Cargamos todas las librerias javascript -->
+<div>
+    <script src="../../js-lib/jquery-2.1.1/jquery-2.1.1.js"></script>
+
+    <script src="../../js-lib/bootstrap-3.1.1-dist/js/bootstrap.js"></script>
+
+    <script src="../../js-lib/underscore-1.6.0.js"></script>
+    <script src="../../js-lib/date.js"></script>
+
+    <script src="../../js-lib/angular-1.2.17/angular.js"></script>
+    <script src="../../js-lib/angular-1.2.17/angular-route.js"></script>
+
+    <script src="./contactClass.js"></script>
+    <script src="./contactsApp.js"></script>
+    <script src="./contactsCtrl.js"></script>
+    <script src="./contactsServices.js"></script>
+</div>
+
+</body>
+</html>

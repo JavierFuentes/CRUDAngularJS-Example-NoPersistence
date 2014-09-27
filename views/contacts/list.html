@@ -1,0 +1,81 @@
+<header class="row text-center text-primary h5">Lista de Contactos</header>
+
+<div class="text-danger">
+    Modo Batch <input type="checkbox" ng-checked="getBatchMode()" ng-click="switchBatchMode()">
+    <!--{{batchMode}}-->
+</div>
+
+<div class="alert alert-warning" ng-show="showWarning">
+    {{actionMessage}}
+</div>
+
+<div class="alert alert-danger" ng-show="showError">
+    {{actionMessage}}
+</div>
+
+<div ng-show="!isLoading">
+
+    <div class="col-xs-4 text-left">
+        <label for="filter">Filtrar  : &NonBreakingSpace; &NonBreakingSpace; </label>
+        <input class="input-sm" type="text" id="filter" autofocus ng-model="myFilter">
+    </div>
+
+    <div class="col-xs-4 text-center h5">
+        <a class="btn" ng-click="first()" title="Primera"> << </a>
+        <a class="btn" ng-click="prev()" title="Anterior"> < </a>
+        <small>Pag. {{pageNo}} de {{totalPages}}</small>
+        <a class="btn" ng-click="next()" title="Siguiente"> > </a>
+        <a class="btn" ng-click="last()" title="Ultima"> >> </a>
+    </div>
+
+    <div class="col-xs-4 text-right">
+        Total Registros SIN CTRL: {{filteredRecords.length}}
+        Total Registros JAVI OLD: {{countFilteredRecords(myFilter)}}
+        Total Registros JAVI NEW: {{countFilteredRecords2(myFilter)}}
+    </div>
+
+    <table class="table table-striped">
+        <tr>
+            <th class="text-left">
+                &NonBreakingSpace; &NonBreakingSpace; &downarrow; &uparrow; <br/>
+                <a class="btn" ng-click="setOrderBy('id')">{{getLabel('row')}}</a>
+            </th>
+            <th>
+                <a class="btn" ng-click="setOrderBy('firstName')">{{getLabel('firstName')}}</a><br/>
+                <a class="btn" ng-click="setOrderBy('lastName')">{{getLabel('lastName')}}</a>
+            </th>
+            <th class="text-center"><a class="btn" ng-click="setOrderBy('birthday')">{{getLabel('birthday')}}</a></th>
+            <th class="text-center"><a class="btn" ng-click="setOrderBy('age')">{{getLabel('age')}}</a></th>
+            <th class="text-center"><a class="btn" ng-click="setOrderBy('sex')">{{getLabel('sex')}}</a></th>
+            <th><a class="btn" ng-click="setOrderBy('city')">{{getLabel('city')}}</a></th>
+            <th class="text-center"><a class="btn" ng-click="setOrderBy('blocked')">{{getLabel('blocked')}}</a></th>
+            <th class="text-right"><a class="btn" ng-click="setOrderBy('balanceAmount')">{{getLabel('balanceAmount')}}</a></th>
+        </tr>
+
+        <tr ng-repeat="rec in filteredRecords = (allRecords |
+                        orderBy:currOrderField:currOrderReverse |
+                        filter:myFilter) |
+                        paginate:pageNo:recsPerPage">
+            <!--<td class="small"><small>{{rec.id}}</small></td>-->
+            <td><a class="btn text-center" ng-click="openCard(rec)">{{allRecords.indexOf(rec) + 1}}</a></td>
+            <td>
+                {{rec.firstName}} <br/> {{rec.lastName}}
+            </td>
+            <td class="text-center">{{rec.birthday | date}}</td>
+            <td class="text-center">{{getAge(rec)}}</td>
+            <td class="text-center">{{rec.sex | sexFilter}}</td>
+            <td>{{rec.city}}</td>
+            <td class="text-center">{{rec.blocked | boolFilter}}</td>
+            <td class="text-right">{{rec.balanceAmount | currency}}</td>
+        </tr>
+    </table>
+
+    <div class="col-xs-12 text-center h5">
+        <a class="btn" ng-click="first()" title="Primera"> << </a>
+        <a class="btn" ng-click="prev()" title="Anterior"> < </a>
+        <small>Pag. {{pageNo}} de {{totalPages}}</small>
+        <a class="btn" ng-click="next()" title="Siguiente"> > </a>
+        <a class="btn" ng-click="last()" title="Ultima"> >> </a>
+    </div>
+
+</div>

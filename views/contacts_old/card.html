@@ -1,0 +1,126 @@
+<div ng-show="isLoading">
+    Cargando datos...
+</div>
+
+<div ng-show="!isLoading">
+    <div class="col-xs-offset-1">
+        <div class="row">
+            <h3>
+                <div>
+                    Ficha
+                </div>
+                <div>
+                    <strong>{{rec.getIdLabel()}} {{rec.id}} - {{rec.getFullName()}}</strong>
+                </div>
+            </h3>
+        </div>
+        <br/>
+
+        <form>
+            <fieldset name="fields" ng-disabled="getFormDisabled()">
+                <div class="row">
+                    <div>
+                        <label class="col-xs-2 text-right">{{rec.getIdLabel()}}</label>
+                        <input class="col-xs-3 text-left" value="{{rec.id}}" disabled/>
+                    </div>
+
+                    <div>
+                        <label class="col-xs-2 text-right">{{rec.getSexLabel()}}</label>
+                        <!--<input class="col-xs-3 text-left" value="{{rec.getSex()}}"/>-->
+
+                        <!--Esto parece que funciona, pero me obliga a conocer la lista de valores del select-->
+                        <select class="col-xs-3 text-left">
+                            <option value="0" ng-selected="{{rec.getSex() === 0}}">
+                                N/D
+                            </option>
+                            <option value="1" ng-selected="{{rec.getSex() === 1}}">
+                                Hombre
+                            </option>
+                            <option value="2" ng-selected="{{rec.getSex() === 2}}">
+                                Mujer
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <p/>
+
+                <div class="row">
+                    <div>
+                        <label class="col-xs-2 text-right">{{rec.getFirstNameLabel()}}</label>
+                        <input class="col-xs-3 text-left" value="{{rec.firstName}}"/>
+                    </div>
+
+                    <div>
+                        <label class="col-xs-2 text-right">{{rec.getCityLabel()}}</label>
+                        <input class="col-xs-3 text-left" value="{{rec.city}}"/>
+                    </div>
+                </div>
+                <p/>
+
+                <div class="row">
+                    <div>
+                        <label class="col-xs-2 text-right">{{rec.getLastNameLabel()}}</label>
+                        <input class="col-xs-3 text-left" value="{{rec.lastName}}"/>
+                    </div>
+
+                    <div>
+                        <label class="col-xs-2 text-right">{{rec.getBlockedLabel()}}</label>
+
+                        <!--Esto parece que funciona, pero me obliga a conocer la lista de valores del select-->
+                        <select class="col-xs-3 text-left">
+                            <option value="false" ng-selected="{{rec.getBlocked()}}">
+                                No
+                            </option>
+                            <option value="true" ng-selected="{{rec.getBlocked()}}">
+                                Si
+                            </option>
+                        </select>
+
+                        <!--Esto no termina de funcionar bien-->
+<!--                        <select ng-model="rec"
+                            ng-options="option.label for option in rec.getBlockedValueList()">
+                        </select>
+-->
+                    </div>
+                </div>
+                <p/>
+
+                <div class="row">
+                    <div>
+                        <label class="col-xs-2 text-right">{{rec.getBirthLabel()}}</label>
+                        <input class="col-xs-3 text-left" value="{{rec.getBirth()}}"/>
+                    </div>
+
+                    <div>
+                        <label class="col-xs-2 text-right">{{rec.getBalanceAmountLabel()}}</label>
+                        <input class="col-xs-3 text-left" value="{{rec.getBalanceAmount()}}"/>
+                    </div>
+                </div>
+                <p/>
+
+                <div class="row">
+                    <div>
+                        <label class="col-xs-2 text-right">{{rec.getAgeLabel()}}</label>
+                        <input class="col-xs-3 text-left" value="{{rec.getAge()}}" disabled/>
+                    </div>
+                </div>
+            </fieldset>
+
+            <p/>
+
+            <div class="col-xs-12">
+                <div class="col-xs-8 text-left">
+                    <input type="button" value="<<Primero" ng-click="getFirstRecord()"/>
+                    <input type="button" value="<Anterior" ng-click="getPreviousRecord()"/>
+                    <input type="button" value="Siguiente>" ng-click="getNextRecord()"/>
+                    <input type="button" value="Ultimo>>" ng-click="getLastRecord()"/>
+                </div>
+                <div class="col-xs-4 text-left">
+                    <input type="button" value="Editar" ng-click="changeFormDisabled()"/>
+                    <input type="button" value="Guardar" ng-submit="rec.save()"/>
+                    <input type="button" value="Eliminar" ng-submit="rec.delete()"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

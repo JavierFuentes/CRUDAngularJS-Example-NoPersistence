@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es" xml:lang="es" ng-app="myApp">
+<head>
+
+    <title>CRUD Angular</title>
+    <meta name="author" content="Javier Fuentes">
+    <link rel="icon" href="../../assets/images/Person-Identity-icon.png">
+    <link rel="stylesheet" href="../../js-lib/bootstrap-3.1.1-dist/css/bootstrap.css">
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-3" ng-include="'./menu.html'"></div>
+        <div class="col-xs-9">
+            <div ng-view></div>
+        </div>
+    </div>
+
+    <footer class="text-left">
+        <script src="../../components/myUtilities.js"></script>
+        <script>
+            document.write( '<br/>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;' + companyData.getCopyright() )
+        </script>
+    </footer>
+</div>
+
+<!-- Cargamos todas las librerias javascript -->
+<div>
+    <script src="../../js-lib/jquery-2.1.1/jquery-2.1.1.js"></script>
+
+    <script src="../../js-lib/bootstrap-3.1.1-dist/js/bootstrap.js"></script>
+
+    <script src="../../js-lib/underscore-1.6.0.js"></script>
+    <script src="../../js-lib/date.js"></script>
+
+    <script src="../../js-lib/angular-1.2.17/angular.js"></script>
+    <script src="../../js-lib/angular-1.2.17/angular-route.js"></script>
+    <script src="../../js-lib/angular-1.2.17/i18n/angular-locale_es-es.js"></script>
+
+    <script src="../../components/myApp.js"></script>
+    <script src="../../components/filters/paginate.js"></script>
+    <script src="../../components/filters/boolfilter.js"></script>
+    <script src="../../components/filters/sexfilter.js"></script>
+
+    <script src="./contactModel.js"></script>
+    <script src="./contactListCtrl.js"></script>
+    <script src="./contactCardCtrl.js"></script>
+    <script src="./contactSearchCtrl.js"></script>
+    <script src="./contactServices.js"></script>
+</div>
+
+</body>
+</html>

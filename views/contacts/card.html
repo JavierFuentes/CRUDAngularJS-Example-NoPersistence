@@ -1,0 +1,111 @@
+<header class="row text-center text-primary h5">Ficha de Contacto</header>
+
+<div class="text-danger">
+    Modo Batch <input type="checkbox" ng-checked="getBatchMode()" ng-click="switchBatchMode()">
+    <!--{{batchMode}}-->
+</div>
+
+<div class="alert alert-warning" ng-show="showWarning">
+    {{actionMessage}}
+</div>
+
+<div class="alert alert-danger" ng-show="showError">
+    {{actionMessage}}
+</div>
+
+<div ng-show="!isLoading">
+    <form name="cardForm">
+
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="id">{{getLabel('id')}}</label>
+
+                    <div class="input-group">
+                        <input class="form-control" type="text" id="id" disabled ng-model="rec.id">
+                        <span class="input-group-addon">{{getLabel('row')}} {{getIndexOf(rec) + 1}}</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="firstName">{{getLabel('firstName')}}</label>
+                    <input class="form-control" type="text" id="firstName" tabindex="1" autofocus
+                           ng-model="rec.firstName">
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">{{getLabel('lastName')}}</label>
+                    <input class="form-control" type="text" id="lastName" tabindex="1" ng-model="rec.lastName">
+                </div>
+
+                <div class="form-group">
+                    <label for="birthday">{{getLabel('birthday')}}</label>
+
+                    <div class="input-group">
+                        <input class="form-control" type="date" id="birthday" tabindex="1" ng-model="rec.birthday">
+                        <span class="input-group-addon">{{getLabel('age')}} {{getAge(rec)}} Años</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="sex">{{getLabel('sex')}}</label>
+                    <select class="form-control" id="sex" tabindex="2" contenteditable="true"
+                            ng-model="rec.sex"
+                            ng-options="sex.sexValue as sex.sexLabel for sex in getSexList()">
+                        <!--ng-options="sex.sexValue as sex.sexValue+' - '+sex.sexLabel for sex in getSexList()">-->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">{{getLabel('city')}}</label>
+                    <input class="form-control" type="text" id="city" tabindex="2" ng-model="rec.city">
+                </div>
+
+                <div class="form-group">
+                    <label for="blocked">{{getLabel('blocked')}}</label><br/>
+                    <span tabindex="2"
+                          ng-repeat="(label, value) in getBoolList()">
+                        {{label}}
+                        <input type="radio"
+                               ng-model="rec.blocked"
+                               ng-value="value"
+                               id="blocked"
+                               name="option{{label}}">
+                        &NonBreakingSpace;
+                    </span>
+                </div>
+
+                <br/>
+
+                <div class="form-group">
+                    <label for="balanceAmount">{{getLabel('balanceAmount')}}</label>
+
+                    <div class="input-group">
+                        <input class="form-control" type="text" id="balanceAmount" tabindex="2"
+                               ng-model="rec.balanceAmount">
+                        <span class="input-group-addon">€</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-4"></div>
+        <div class="row col-xs-4 text-center">
+            <button class="btn btn-primary" ng-disabled="cardForm.$invalid" tabindex="3" ng-click="saveOrUpdate(rec)">
+                Guardar
+            </button>
+
+            <button class="btn btn-danger" tabindex="3" ng-click="remove(rec)">
+                Eliminar
+            </button>
+
+            <button class="btn btn-info" tabindex="3" ng-click="cancel()">
+                Cancelar
+            </button>
+        </div>
+        <div class="col-xs-4"></div>
+
+    </form>
+</div>
